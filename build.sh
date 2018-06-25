@@ -1,23 +1,24 @@
 #!/usr/bin/env bash
 
+VERSION=0.241
 REPO=https://github.com/hunterlong/statup/releases/download
 
 mkdir build
 
 BINFILE=statup-osx-x64
-curl -o build/$BINFILE $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE $REPO/v$VERSION/$BINFILE
 OSX64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 
 BINFILE=statup-osx-x32
-curl -o build/$BINFILE $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE $REPO/v$VERSION/$BINFILE
 OSX32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 
 BINFILE=statup-linux-x64
-curl -o build/$BINFILE $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE $REPO/v$VERSION/$BINFILE
 LIN64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 
 BINFILE=statup-linux-x32
-curl -o build/$BINFILE $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE $REPO/v$VERSION/$BINFILE
 LIN32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 
 cat formula | \
