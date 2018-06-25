@@ -1,0 +1,13 @@
+os:
+  - linux
+
+env:
+  - VERSION=0.23
+
+script:
+  - git config --local user.name "hunterlong"
+  - git config --local user.email "info@socialeck.com"
+  - ./build.sh
+  - git add statup.rb
+  - git commit -m "Statup $VERSION"
+  - git push origin master

@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-VERSION=v0.23
-
 REPO=https://github.com/hunterlong/statup/releases/download
 
 mkdir build
@@ -29,7 +27,3 @@ cat formula | \
     -e "s/\$LIN64/$LIN64/" \
     -e "s/\$LIN32/$LIN32/" \
     > statup.rb
-
-git add statup.rb
-git commit -m "Statup $VERSION"
-git push origin master
