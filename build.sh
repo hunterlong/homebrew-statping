@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=0.241
+VERSION=$VERSION
 REPO=https://github.com/hunterlong/statup/releases/download
 
 rm -rf build
