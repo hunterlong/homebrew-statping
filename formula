@@ -4,7 +4,7 @@ class Statup < Formula
   homepage "https://github.com/hunterlong/statup"
   version "$VERSION"
   if OS.mac?
-    if Hardware.is_64_bit?
+    if Hardware::CPU.is_64_bit?
       url "https://github.com/hunterlong/statup/releases/download/$VERSION/statup-osx-x64.tar.gz"
       sha256 "$OSX64"
     else
@@ -12,7 +12,7 @@ class Statup < Formula
       sha256 "$OSX32"
     end
   elsif OS.linux?
-      if Hardware.is_64_bit?
+      if Hardware::CPU.is_64_bit?
         url "https://github.com/hunterlong/statup/releases/download/$VERSION/statup-linux-x64.tar.gz"
         sha256 "$LIN64"
       else

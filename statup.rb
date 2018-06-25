@@ -4,20 +4,20 @@ class Statup < Formula
   homepage "https://github.com/hunterlong/statup"
   version "0.241"
   if OS.mac?
-    if Hardware.is_64_bit?
+    if Hardware::CPU.is_64_bit?
       url "https://github.com/hunterlong/statup/releases/download/0.241/statup-osx-x64.tar.gz"
-      sha256 "15525a130db2d164180dc9f0ed16d3c6a4abf330fdc63cc7d43dea4834447cbf"
+      sha256 "7a91dce91777bd030b34dda781ea395bc53f31a947a2afc4a286799f200d804b"
     else
       url "https://github.com/hunterlong/statup/releases/download/0.241/statup-osx-x32.tar.gz"
-      sha256 "ac5940aaefa43236671588bc275ebb4e0c92a60cf316ccd307e4230a93323967"
+      sha256 "2c3afce52ae12d990f04d371f050cb869112d30d0a9995d1a1f78935fd4b4fee"
     end
   elsif OS.linux?
-      if Hardware.is_64_bit?
+      if Hardware::CPU.is_64_bit?
         url "https://github.com/hunterlong/statup/releases/download/0.241/statup-linux-x64.tar.gz"
-        sha256 "089619ee19af2f67beba1ab0fcc3863e79105e335d88bf17d6ab8efd2b4d3696"
+        sha256 "90f44ac055e0ee282cff30982c600e8a22a8a00697ad94cf108af9d48dbd654a"
       else
         url "https://github.com/hunterlong/statup/releases/download/0.241/statup-linux-x32.tar.gz"
-        sha256 "9a191a3a0c39ac049e1140527d1684587d92704bf35dc28be424974831707313"
+        sha256 "038127aa7fd4960e06154f0effb6507ad9e3ec56e6d625905dd90ecc75b4cbe7"
       end
   end
 
