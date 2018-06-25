@@ -33,3 +33,10 @@ cat formula | \
     -e "s/\$LIN64/$LIN64/" \
     -e "s/\$LIN32/$LIN32/" \
     > statup.rb
+
+git remote rm origin
+git remote add origin https://hunterlong:$GH_TOKEN@github.com/hunterlong/homebrew-statup.git
+
+git add statup.rb
+git commit -m "Release to v$VERSION"
+git push origin master
