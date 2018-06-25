@@ -5,6 +5,4 @@ env:
   - VERSION=0.23
 
 script:
-  - git config --local user.name "hunterlong"
-  - git config --local user.email "info@socialeck.com"
   - ./build.sh

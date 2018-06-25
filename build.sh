@@ -34,6 +34,9 @@ cat formula | \
     -e "s/\$LIN32/$LIN32/" \
     > statup.rb
 
+git config --local user.name "hunterlong"
+git config --local user.email "info@socialeck.com"
+
 git remote rm origin
 git remote add origin https://hunterlong:$GH_TOKEN@github.com/hunterlong/homebrew-statup.git
 
