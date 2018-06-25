@@ -8,27 +8,23 @@ mkdir build
 
 BINFILE=statup-osx-x64.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
-tar -xvzf build/$BINFILE
-OSX64=`openssl dgst -sha256 statup | sed 's/^.*= //'`
-rm -f statup
+OSX64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
+printf "$BINFILE ===> $OSX64\n"
 
 BINFILE=statup-osx-x32.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
-tar -xvzf build/$BINFILE
-OSX32=`openssl dgst -sha256 statup | sed 's/^.*= //'`
-rm -f statup
+OSX32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
+printf "$BINFILE ===> $OSX32\n"
 
 BINFILE=statup-linux-x64.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
-tar -xvzf build/$BINFILE
-LIN64=`openssl dgst -sha256 statup | sed 's/^.*= //'`
-rm -f statup
+LIN64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
+printf "$BINFILE ===> $LIN64\n"
 
 BINFILE=statup-linux-x32.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
-tar -xvzf build/$BINFILE
-LIN32=`openssl dgst -sha256 statup | sed 's/^.*= //'`
-rm -f statup
+LIN32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
+printf "$BINFILE ===> $LIN32\n"
 
 cat formula | \
     sed -e "s/\$VERSION/$VERSION/" \
