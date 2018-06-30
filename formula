@@ -4,19 +4,19 @@ class Statup < Formula
   homepage "https://github.com/hunterlong/statup"
   version "$VERSION"
   if OS.mac?
-    if bits_64?
-      url "https://github.com/hunterlong/statup/releases/download/$VERSION/statup-osx-x64.tar.gz"
+    if Hardware::CPU.is_64_bit?
+      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-osx-x64.tar.gz"
       sha256 "$OSX64"
     else
-      url "https://github.com/hunterlong/statup/releases/download/$VERSION/statup-osx-x32.tar.gz"
+      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-osx-x32.tar.gz"
       sha256 "$OSX32"
     end
   elsif OS.linux?
-      if bits_64?
-        url "https://github.com/hunterlong/statup/releases/download/$VERSION/statup-linux-x64.tar.gz"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x64.tar.gz"
         sha256 "$LIN64"
       else
-        url "https://github.com/hunterlong/statup/releases/download/$VERSION/statup-linux-x32.tar.gz"
+        url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x32.tar.gz"
         sha256 "$LIN32"
       end
   end
@@ -29,7 +29,4 @@ class Statup < Formula
     system "#{bin}/statup", "version"
   end
 
-  def bits_64?
-    Hardware.is_64_bit?
-  end
 end
