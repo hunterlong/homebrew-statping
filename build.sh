@@ -7,7 +7,6 @@ rm -rf build
 mkdir build
 
 BINFILE=statup-osx-x64.tar.gz
-printf "Downloading $REPO/$VERSION/$BINFILE"
 curl -q -o build/$BINFILE -OL $REPO/$VERSION/$BINFILE
 OSX64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $OSX64\n"
