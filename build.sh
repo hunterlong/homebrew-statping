@@ -41,7 +41,7 @@ git config user.name $GH_USER
 git config user.email $GH_EMAIL
 
 git remote rm origin
-git remote add origin https://$GH_USER:$GH_EMAIL@github.com/$GH_USER/homebrew-statup.git
+git remote add origin https://$GH_USER:$GH_TOKEN@github.com/$GH_USER/homebrew-statup.git
 
 git add statup.rb
 git commit -m "New Homebrew v$VERSION ${rev}"
