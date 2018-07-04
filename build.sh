@@ -1,28 +1,28 @@
 #!/usr/bin/env bash
 
-VERSION=$(curl -s "https://github.com/hunterlong/statup/releases/latest" | grep -o 'tag/[v.0-9]*' | awk -F/ '{print $2}')
+VERSION=$VERSION
 REPO=https://github.com/hunterlong/statup/releases/download
 
 rm -rf build
 mkdir build
 
 BINFILE=statup-osx-x64.tar.gz
-curl -q -o build/$BINFILE -OL $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 OSX64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $OSX64\n"
 
 BINFILE=statup-osx-x32.tar.gz
-curl -q -o build/$BINFILE -OL $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 OSX32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $OSX32\n"
 
 BINFILE=statup-linux-x64.tar.gz
-curl -q -o build/$BINFILE -OL $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 LIN64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $LIN64\n"
 
 BINFILE=statup-linux-x32.tar.gz
-curl -q -o build/$BINFILE -OL $REPO/$VERSION/$BINFILE
+curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 LIN32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $LIN32\n"
 
@@ -34,9 +34,11 @@ cat formula | \
     -e "s/\$LIN32/$LIN32/" \
     > statup.rb
 
-#git config --local user.name "hunterlong"
-#git config --local user.email "info@socialeck.com"
+cat statup.rb
 
-#git add statup.rb
-#git commit -m "Release to v$VERSION"
-#git push origin master
+rev=$(git rev-parse --short HEAD)
+git config user.name $GH_USER
+git config user.password $GH_EMAIL
+git add statup.rb
+git commit -m "New Homebrew v$VERSION ${rev}"
+git push origin HEAD:master
