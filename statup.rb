@@ -1,6 +1,5 @@
 class Statup < Formula
-  homepage 'https://statup.io'
-  desc "An easy to use Status Page for your websites and applications."
+  desc "Track and monitor your websites and applications uptime"
   homepage "https://github.com/hunterlong/statup"
   version "0.29.7"
   if OS.mac?
@@ -12,13 +11,13 @@ class Statup < Formula
       sha256 "d2ea8d71bbbe61ef35bc7d6cea271ad431535efd0c2477ca746a6e8facb0826e"
     end
   elsif OS.linux?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/hunterlong/statup/releases/download/v0.29.7/statup-linux-x64.tar.gz"
-        sha256 "beb3bf413839499a78c821984696bd721b1effc9d07f1d24081c8e1f21f6c968"
-      else
-        url "https://github.com/hunterlong/statup/releases/download/v0.29.7/statup-linux-x32.tar.gz"
-        sha256 "d5d6ff32b363b854fe46e33e1c23b36090a52ea70685d2c8a69b3ae21c37f8f6"
-      end
+    if Hardware::CPU.is_64_bit?
+      url "https://github.com/hunterlong/statup/releases/download/v0.29.7/statup-linux-x64.tar.gz"
+      sha256 "beb3bf413839499a78c821984696bd721b1effc9d07f1d24081c8e1f21f6c968"
+    else
+      url "https://github.com/hunterlong/statup/releases/download/v0.29.7/statup-linux-x32.tar.gz"
+      sha256 "d5d6ff32b363b854fe46e33e1c23b36090a52ea70685d2c8a69b3ae21c37f8f6"
+    end
   end
 
   def install
@@ -28,5 +27,4 @@ class Statup < Formula
   test do
     system "#{bin}/statup", "version"
   end
-
 end
