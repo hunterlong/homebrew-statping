@@ -1,6 +1,5 @@
 class Statup < Formula
-  homepage 'https://statup.io'
-  desc "An easy to use Status Page for your websites and applications."
+  desc "Track and monitor your websites and applications uptime"
   homepage "https://github.com/hunterlong/statup"
   version "$VERSION"
   if OS.mac?
@@ -12,13 +11,13 @@ class Statup < Formula
       sha256 "$OSX32"
     end
   elsif OS.linux?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x64.tar.gz"
-        sha256 "$LIN64"
-      else
-        url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x32.tar.gz"
-        sha256 "$LIN32"
-      end
+    if Hardware::CPU.is_64_bit?
+      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x64.tar.gz"
+      sha256 "$LIN64"
+    else
+      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x32.tar.gz"
+      sha256 "$LIN32"
+    end
   end
 
   def install
@@ -28,5 +27,4 @@ class Statup < Formula
   test do
     system "#{bin}/statup", "version"
   end
-
 end
