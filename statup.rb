@@ -1,22 +1,22 @@
 class Statup < Formula
   desc "Track and monitor your websites and applications uptime"
   homepage "https://github.com/hunterlong/statup"
-  version "0.31"
+  version "0.32"
   if OS.mac?
     if Hardware::CPU.is_64_bit?
-      url "https://github.com/hunterlong/statup/releases/download/v0.31/statup-osx-x64.tar.gz"
-      sha256 "aeca7f0f70f604d853b0f0f70d9a31d6ee72eba387dd0f0c220313365df7ad38"
+      url "https://github.com/hunterlong/statup/releases/download/v0.32/statup-osx-x64.tar.gz"
+      sha256 "70fb2092d80b59bd378484adaebfdc9da26d34a2c7dbe26e3077648407fafe84"
     else
-      url "https://github.com/hunterlong/statup/releases/download/v0.31/statup-osx-x32.tar.gz"
-      sha256 "ab3ffef2bcc0ac976bc5778f79d6c13ec75c166a658fc490c4045e4a69074532"
+      url "https://github.com/hunterlong/statup/releases/download/v0.32/statup-osx-x32.tar.gz"
+      sha256 "fa9c4d3f606384a5fcb08ce2c1544ef3d07136c14c371cbe87efd6d739ecf634"
     end
   elsif OS.linux?
     if Hardware::CPU.is_64_bit?
-      url "https://github.com/hunterlong/statup/releases/download/v0.31/statup-linux-x64.tar.gz"
-      sha256 "d80b2868c5dd3cc63ea1c7817153ee4c556d891fc1971cdf71ca22f5e9405c74"
+      url "https://github.com/hunterlong/statup/releases/download/v0.32/statup-linux-x64.tar.gz"
+      sha256 "c7fc20b423315a74cac458d1038aba76bd0ea0f2cc3b016fc1f6de64b4ad8f3a"
     else
-      url "https://github.com/hunterlong/statup/releases/download/v0.31/statup-linux-x32.tar.gz"
-      sha256 "6a1e4d5c02c943a4786b1669f6916b875e750e9b6360199396c8d7672b77cd02"
+      url "https://github.com/hunterlong/statup/releases/download/v0.32/statup-linux-x32.tar.gz"
+      sha256 "f8b82f092260299ec136aa55f7a57089f4b4c690e5122d1f64c47e909fcc1587"
     end
   end
 
