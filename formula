@@ -1,30 +1,30 @@
-class Statup < Formula
+class Statping < Formula
   desc "Track and monitor your websites and applications uptime"
-  homepage "https://github.com/hunterlong/statup"
+  homepage "https://github.com/hunterlong/statping"
   version "$VERSION"
   if OS.mac?
     if Hardware::CPU.is_64_bit?
-      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-osx-x64.tar.gz"
+      url "https://github.com/hunterlong/statping/releases/download/v$VERSION/statping-osx-x64.tar.gz"
       sha256 "$OSX64"
     else
-      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-osx-x32.tar.gz"
+      url "https://github.com/hunterlong/statping/releases/download/v$VERSION/statping-osx-x32.tar.gz"
       sha256 "$OSX32"
     end
   elsif OS.linux?
     if Hardware::CPU.is_64_bit?
-      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x64.tar.gz"
+      url "https://github.com/hunterlong/statping/releases/download/v$VERSION/statping-linux-x64.tar.gz"
       sha256 "$LIN64"
     else
-      url "https://github.com/hunterlong/statup/releases/download/v$VERSION/statup-linux-x32.tar.gz"
+      url "https://github.com/hunterlong/statping/releases/download/v$VERSION/statping-linux-x32.tar.gz"
       sha256 "$LIN32"
     end
   end
 
   def install
-    bin.install "statup"
+    bin.install "statping"
   end
 
   test do
-    system "#{bin}/statup", "version"
+    system "#{bin}/statping", "version"
   end
 end
