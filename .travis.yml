@@ -2,7 +2,7 @@ os:
   - linux
 
 env:
-  - VERSION=0.29.5
+  - VERSION=0.80.32
 
 script:
   - ./build.sh
