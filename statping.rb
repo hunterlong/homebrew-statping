@@ -5,18 +5,18 @@ class Statping < Formula
   if OS.mac?
     if Hardware::CPU.is_64_bit?
       url "https://github.com/hunterlong/statping/releases/download/v0.80.40/statping-osx-x64.tar.gz"
-      sha256 "037851a2c1fd4ec89ff5e61fe80819c74af593f7b097ef556fe0304bc655db09"
+      sha256 "9a25d5b6503c2e1458ecdfed88571c1cf716bf51d8b4f12497856b9cc6c7157e"
     else
       url "https://github.com/hunterlong/statping/releases/download/v0.80.40/statping-osx-x32.tar.gz"
-      sha256 "d65bd75e944afdcb02977cccbc715210327b69e8646eecab01446b4d0cbdab0d"
+      sha256 "dd7cc8c83094ef1563bba26f7a5c06e6c5b4ff2c7702c5ab75c4744dee8d5932"
     end
   elsif OS.linux?
     if Hardware::CPU.is_64_bit?
       url "https://github.com/hunterlong/statping/releases/download/v0.80.40/statping-linux-x64.tar.gz"
-      sha256 "c4496ae303c76695418f029e12909692723e60334e96a21fb95a3f7802682bb6"
+      sha256 "96b8f56d989c8171db8c4b00f2fd710e3c5b9e57a680eea760b474fde10935be"
     else
       url "https://github.com/hunterlong/statping/releases/download/v0.80.40/statping-linux-x32.tar.gz"
-      sha256 "c2aa5c738a6967c8a0fa38e036ee31b0d6921a8031f6828ad8f85810360245cb"
+      sha256 "0837697fd48ff496555a2483f7fdb5e8ba4a24a05112738fec2ed7d3a96c591a"
     end
   end
 
