@@ -1,22 +1,22 @@
 class Statping < Formula
   desc "Track and monitor your websites and applications uptime"
   homepage "https://github.com/hunterlong/statping"
-  version "0.80.48"
+  version "0.80.49"
   if OS.mac?
     if Hardware::CPU.is_64_bit?
-      url "https://github.com/hunterlong/statping/releases/download/v0.80.48/statping-osx-x64.tar.gz"
-      sha256 "4995011f2ccb98cf437a42594a71f4748c1cc4f39e3318182fc85402115f25c1"
+      url "https://github.com/hunterlong/statping/releases/download/v0.80.49/statping-osx-x64.tar.gz"
+      sha256 "92544e6d810a9b483ef6b39176b7a04b12519d0503bbf27ae6daeff8cca128da"
     else
-      url "https://github.com/hunterlong/statping/releases/download/v0.80.48/statping-osx-x32.tar.gz"
-      sha256 "7c8be057ec7ec33c2bd92809ed2c15aba35ca802fef7077fb3dd3fb620eabd4e"
+      url "https://github.com/hunterlong/statping/releases/download/v0.80.49/statping-osx-x32.tar.gz"
+      sha256 "911630c9b615939f9ced65ed6935c043ef5a523738af2425e5346c0a3ee98d89"
     end
   elsif OS.linux?
     if Hardware::CPU.is_64_bit?
-      url "https://github.com/hunterlong/statping/releases/download/v0.80.48/statping-linux-x64.tar.gz"
-      sha256 "8151aa26090cf05ac823eaebd1102acdc153baf150d6182bf2e62b317a96b274"
+      url "https://github.com/hunterlong/statping/releases/download/v0.80.49/statping-linux-x64.tar.gz"
+      sha256 "ee6ce762239021504f8bcd88e909227e737079c5792702f985b2923df7e2fc38"
     else
-      url "https://github.com/hunterlong/statping/releases/download/v0.80.48/statping-linux-x32.tar.gz"
-      sha256 "488296365987801b3cd8b489deaa12494600c948584798dd0a215d1b0d2d2f56"
+      url "https://github.com/hunterlong/statping/releases/download/v0.80.49/statping-linux-x32.tar.gz"
+      sha256 "d631883758a5d609645b0da6f16e6daa9beba8f6baf0ea87bde69be266dc0fa6"
     end
   end
 
