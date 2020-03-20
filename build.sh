@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 VERSION=$VERSION
-REPO=https://github.com/hunterlong/statping/releases/download
+REPO=https://github.com/statping/statping/releases/download
 
 rm -rf build
 mkdir build
@@ -41,7 +41,7 @@ git config user.name $GH_USER
 git config user.email $GH_EMAIL
 
 git remote rm origin
-git remote add origin https://$GH_USER:$GH_TOKEN@github.com/$GH_USER/homebrew-statping.git
+git remote add origin https://$GH_USER:$GH_TOKEN@github.com/statping/homebrew-statping.git
 
 git add statping.rb
 git commit -m "New Homebrew v$VERSION ${rev}"
