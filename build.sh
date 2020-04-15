@@ -6,22 +6,22 @@ REPO=https://github.com/statping/statping/releases/download
 rm -rf build
 mkdir build
 
-BINFILE=statping-osx-x64.tar.gz
+BINFILE=statping-darwin-amd64.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 OSX64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $OSX64\n"
 
-BINFILE=statping-osx-x32.tar.gz
+BINFILE=statping-darwin-386.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 OSX32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $OSX32\n"
 
-BINFILE=statping-linux-x64.tar.gz
+BINFILE=statping-linux-amd64.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 LIN64=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $LIN64\n"
 
-BINFILE=statping-linux-x32.tar.gz
+BINFILE=statping-linux-386.tar.gz
 curl -o build/$BINFILE -OL $REPO/v$VERSION/$BINFILE
 LIN32=`openssl dgst -sha256 build/$BINFILE | sed 's/^.*= //'`
 printf "$BINFILE ===> $LIN32\n"
